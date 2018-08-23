@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#" id="ban">hover!</a>
+</body>
+<style>
+    a{
+        text-decoration-line: none;
+    }
+#ban{
+    background: black;
+    color: white;
+    transition: .3s ease-in-out;
+    display: inline-block;
+    padding: 5px;
+}
+#ban:hover{
+    color: black;
+    border: 1px solid black;
+    background: white;
+    transition: .3s ease-in-out;
+}
+</style>
+<script>
+    var throttle = function (delay, action) {
+            let last = 0;
+            return function (rest) {
+                var curr = +new Date()
+                if (curr - last > delay) {
+                    console.log(curr-last)
+                    action.apply(this, arguments) 
+                    console.log(this)
+                    last = curr  
+                }
+            }
+        }
+        let showMessage=function(){
+            console.log('show it!')
+            console.log(arguments)
+        }
+        let el=document.querySelector('#ban');
+        el.addEventListener('click',throttle(3000, showMessage),1)
+</script>
+</html>

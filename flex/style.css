@@ -1,0 +1,71 @@
+/* OTHER STYLES */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+  vertical-align: center;
+  flex-wrap: wrap;
+  align-content: center;
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(top, #222, #333);
+}
+[class$="face"] {
+  display: flex;  
+  flex-wrap: wrap;  
+  margin: 16px;
+  padding: 4px;
+  background-color: #e7e7e7;
+  width: 104px;
+  height: 104px;
+  object-fit: contain;
+}
+.pip {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin: 4px;
+  background-color: #333;
+  box-shadow: inset 0 3px #111, inset 0 -3px #555;
+}
+/************/
+.first-face{
+    align-items: center;
+    justify-content: center;
+}
+.second-face .pip:nth-of-type(2){
+    align-self: flex-end;
+}
+.third-face .pip:nth-of-type(2){
+    align-self: center;
+}
+.third-face .pip:nth-of-type(3){
+    align-self: flex-end;
+}
+.second-face,.third-face,.fourth-face,.fifth-face,.sixth-face{
+    justify-content: space-between;
+}
+.fourth-face .column,.fifth-face .column,.sixth-face .column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.fifth-face .column:nth-of-type(2){
+    justify-content: center;
+}
+.face{
+  transition: all .5s ease-in-out;  
+}
+.face:hover{
+  box-shadow: 0 10px 0 -5px #B0BEC5, 0 20px 0 -10px #CFD8DC, 0 30px 0 -16px #ECEFF1;
+  transition: all .5s ease-in-out;   
+}

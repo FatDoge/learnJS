@@ -1,0 +1,20 @@
+{
+  "name": "learnJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/你不知道的js中卷/yield3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --entry ./你不知道的js中卷/yield3.js --output ./你不知道的js中卷/out.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "webpack": "^4.15.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.0"
+  }
+}

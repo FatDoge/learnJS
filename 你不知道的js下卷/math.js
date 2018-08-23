@@ -1,0 +1,6 @@
+console.log(Math.hypot(2,2))
+console.log(Number.EPSILON)
+console.log(Number.MAX_SAFE_INTEGER)
+console.log(Number.MIN_SAFE_INTEGER)
+console.log(Number.isNaN(NaN))
+console.log('foo'.repeat(3))
