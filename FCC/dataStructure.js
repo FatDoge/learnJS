@@ -111,10 +111,117 @@
 //     [1000, 1001, 857, 1]
 // ]));
 
-function confirmEnding(str, target) {
-    // "Never give up and good luck will find you."
-    // -- Falcor
-    return str.substring(str.length - target.length) === target;
+// function confirmEnding(str, target) {
+//     // "Never give up and good luck will find you."
+//     // -- Falcor
+//     return str.substring(str.length - target.length) === target;
+// }
+
+// console.log(confirmEnding("Bastian", "n"));
+
+// function repeatStringNumTimes(str, num) {
+//     // repeat after me
+//     let result=''
+//     if(num<0){
+//         return result
+//     }
+//     while(num--){
+//         result=result.concat(str)
+//     }
+//     console.log(result)
+//     return result;
+// }    
+
+// console.log(repeatStringNumTimes("abc", 3));
+// function truncateString(str, num) {
+//     // Clear out that junk in your trunk
+//     if (str.length <= num) {
+//         return str
+//     }
+//     str=str.split('').splice(0, num).join('').concat('...')
+//     return str;
+// }
+
+// console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+
+// function findElement(arr, func) {
+//     return arr.find(func)
+// }
+
+// console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+
+// function titleCase(str) {
+//     let arr=str.split(' ')
+//     for(let i=0,len=arr.length;i<len;i++){
+//         arr[i]=arr[i].toLowerCase()
+//         let arr2=arr[i].split('')
+//         arr2[0]=arr2[0].toUpperCase()
+//         arr[i]=arr2.join('')
+//     }
+//     return arr.join(' ')
+// }
+
+// console.log(titleCase("I'm a little tea pot"));
+
+// function frankenSplice(arr1, arr2, n) {
+//     // It's alive. It's alive!
+//     let temp=[...arr2]
+//     let _slice=temp.splice(n)
+//     temp.splice(n,arr1.length,...arr1)
+//     temp.push(..._slice)
+//     return temp;
+// }
+
+// console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
+
+// function bouncer(arr) {
+//     // Don't show a false ID to this bouncer.
+//     let result=[]
+//     for (let i = 0, len = arr.length; i < len; i++) {
+//         console.log(arr[i])
+//         if (arr[i]) {
+//             result.push(arr[i])
+//         }
+//     }
+//     return result;
+// }
+
+// console.log(bouncer([7, "ate", "", false, 9]));
+
+// function getIndexToIns(arr, num) {
+//     // Find my place in this sorted array.
+//     arr.push(num);
+//     arr.sort((a,b)=>{
+//         return a>b
+//     })
+//     return arr.indexOf(num);
+// }
+
+// console.log(getIndexToIns([3,10,5], 3));
+
+// function mutation(arr) {
+//     console.log(arr[1].toLowerCase().split(''))
+//     console.log(arr[0].toLowerCase().split(''))
+
+//     return arr[1].toLowerCase().split('').every(item=>{
+//         return arr[0].toLowerCase().split('').indexOf(item)!==-1
+//     })
+    
+// }
+
+// console.log(mutation(["hello", "hello"]));
+// console.log(['h','e','l','l','o'].indexOf('y'))
+
+function chunkArrayInGroups(arr, size) {
+    // Break it up.
+    let result=[]
+     while(arr.length>=size){
+         result.push(arr.splice(0,size))
+     }
+     if(arr.length>0){
+         result.push(arr)
+     }
+    return result;
 }
 
-console.log(confirmEnding("Bastian", "n"));
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
