@@ -36,3 +36,33 @@ function destroyer(arr,...rest) {
 }
 
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
+
+let users=[{
+        username: 'Jeff',
+        online: true
+    },
+    {
+        username: 'Alan',
+        online: false
+    },
+    {
+        username: 'Mary',
+        online: true
+    },
+    {
+        username: 'Jim',
+        online: false
+    },
+    {
+        username: 'Sara',
+        online: true
+    },
+    {
+        username: 'Laura',
+        online: true
+    }
+]
+let usersOnline = users.filter(item => {return item.online})
+console.log(usersOnline)
+const renderOnline = usersOnline.map((item, index) =>`<li key=${index}>${item.username}</li>`);
+console.log(renderOnline)
