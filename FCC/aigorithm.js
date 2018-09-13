@@ -66,3 +66,20 @@ let usersOnline = users.filter(item => {return item.online})
 console.log(usersOnline)
 const renderOnline = usersOnline.map((item, index) =>`<li key=${index}>${item.username}</li>`);
 console.log(renderOnline)
+
+function foo() {
+    console.log(this);
+}
+
+console.log(new foo()) // foo
+console.log(foo())
+
+var x=10;
+function fn(){
+    console.log(x)
+}
+function show(f){
+    var x=20;
+    f()
+}
+show(fn)
