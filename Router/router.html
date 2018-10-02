@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li><a href="about">关于</a></li>
+    <li><a href="blog">博客</a></li>
+
+  </ul>
+  <div id="state"></div>
+</body>
+<script>
+  // patch history pushState
+(function(history){
+    var pushState = history.pushState;
+    history.pushState = function(state) {
+        if (typeof history.onpushstate == "function") {
+            history.onpushstate({state: state});
+        }
+        return pushState.apply(history, arguments);
+    }
+})(window.history);
+// Add trigger function
+window.onpopstate = history.onpushstate = function(event) {
+  document.getElementById('state').innerHTML = "location: " + document.location + ", state: " + JSON.stringify(event.state);
+}
+// Bind events to all links
+var elements = document.getElementsByTagName('a');
+for(var i = 0, len = elements.length; i < len; i++) {
+    elements[i].onclick = function (event) {
+        event.preventDefault();
+        var route = event.target.getAttribute('href');
+        history.pushState({page: route}, route, route);
+        console.log('current state', history.state)
+    }
+}
+</script>
+</html>
