@@ -1,0 +1,25 @@
+<html>
+  <body>
+    <div id="div1">我是一个 div</div>
+  </body>
+  <script>
+    // var getId = document.getElementById;
+    // getId( 'div1' );
+    // document.getElementById = (function (func) {
+    //     return function () {
+    //       return func.apply(document, arguments);
+    //     }
+    //   })(document.getElementById);
+    //   console.log(document.getElementById)
+    //   var getId = document.getElementById;
+    //   var div = getId('div1');
+    //   console.log(div);
+    document.getElementById('div1').onclick = function () {
+        alert(this.id); // 输出： div1
+        var func = () => {
+          alert(this.id); // 输出： div1
+        }
+        func();
+      };
+  </script>
+</html>

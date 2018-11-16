@@ -9,19 +9,19 @@
 // };
 // let state=[1]
 // console.log(add(state,action))
-let initialState= {
-  products: [
-    { name: 'dva', id: 1, key: 1 },
-    { name: 'antd', id: 2, key: 2 },
-    { name: 'fatdoge', id: 3, key: 3 },
-    { name: 'bilibili', id: 4, key: 4 },
+// let initialState= {
+//   products: [
+//     { name: 'dva', id: 1, key: 1 },
+//     { name: 'antd', id: 2, key: 2 },
+//     { name: 'fatdoge', id: 3, key: 3 },
+//     { name: 'bilibili', id: 4, key: 4 },
 
-  ]
-}
-const add=({products}) => (
-  {products}
-)
-console.log(add(initialState))
+//   ]
+// }
+// const add=({products}) => (
+//   {products}
+// )
+// console.log(add(initialState))
 
 // function *generatorDemo(){
 //   yield 1
@@ -91,3 +91,37 @@ console.log(add(initialState))
 // for (var i of fab(10)) {
 //   console.log(i);
 // }
+
+// let formData1 = {
+//   name: 'fatdoge',
+// }
+
+// let formData2 = {
+//   js: 'primary'
+// }
+
+// let formData3 = {
+//   list: [0,1,2,3],
+//   changeIt: 'hello!'
+// }
+// let data = {
+//   ...formData1,
+//   ...formData2,
+//   result:{
+//     ...formData1,
+//     ...formData3,
+//     changeIt: 'hello world!'
+//   }
+// }
+// console.log(data)
+// let handleClick = (id = null,name)=>{
+//   console.log(id,name)
+// }
+let data = {
+  obj1: {
+    age: 42
+  }
+}
+// let obj1 = data.obj1
+let { obj1 } = data
+console.log(obj1)
