@@ -84,3 +84,31 @@
 // }
 // console.log(data.default())
 // console.log(data2.default)
+// const arr = [1,3,7,9,12,13,15,56]
+// console.log(arr.includes(2))
+
+let props = {
+  schedule: {
+    channelList: {
+      items: [
+        {
+          id: 1
+        }
+      ]
+    }
+  }
+}
+const { schedule } = props
+console.log(schedule.channelList)
+console.log(props.schedule.channelList)
+props.schedule = {
+  channelList: {
+    items: [
+      {
+        id:10000
+      }
+    ]
+  }
+}
+console.log(schedule.channelList)
+console.log(props.schedule.channelList)
