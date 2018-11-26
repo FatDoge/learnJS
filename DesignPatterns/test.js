@@ -101,6 +101,7 @@ let props = {
 const { schedule } = props
 console.log(schedule.channelList)
 console.log(props.schedule.channelList)
+console.log(schedule.channelList === props.schedule.channelList)
 props.schedule = {
   channelList: {
     items: [
@@ -110,5 +111,24 @@ props.schedule = {
     ]
   }
 }
+console.log(schedule.channelList === props.schedule.channelList)
 console.log(schedule.channelList)
 console.log(props.schedule.channelList)
+
+
+console.log({}==={})
+console.log([]===[])
+console.log(1===1)
+
+console.log([]==0)
+console.log([].length)
+
+const contacts = {
+  name: 'said',
+  famillyName: 'Hayani',
+  age: 22
+};
+
+let {name:otherName, famillyName, myAge} = contacts;
+
+console.log(otherName);// said
