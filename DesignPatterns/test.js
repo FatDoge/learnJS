@@ -132,3 +132,29 @@ const contacts = {
 let {name:otherName, famillyName, myAge} = contacts;
 
 console.log(otherName);// said
+
+let myIterableObj = { 
+  [Symbol.iterator] : function* () {
+    yield 1; yield 2; yield 3;
+  }
+}
+console.log([...myIterableObj]);
+
+const arr = ['0', '1', '4', 'a', '9', 'c', '16'];
+console.log(arr.map(i=>parseInt(i, 10)).map(i=>Math.sqrt(i)).filter(i=>i<5).reduce((i, d) => i+d))
+
+console.log(Array(3 + 1).join("foo"));
+console.log(Array(3 + 1))
+console.log(String.prototype.repeat.call(2,3))
+console.log(`${2}`.repeat(2))
+console.log(typeof(`${2}`))
+
+const user = {
+  name: 'David',
+  age: 28,
+  id: 1234
+};
+let newUser = Object.assign({},
+  { name, age } = user,
+  { id: 9999 });
+console.log(newUser);
