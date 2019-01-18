@@ -1,18 +1,23 @@
-const getItemsValues = () => {
-  test((err, params) => {
-    if(!err) {
-      console.log('1')
-      return params
+const state = {
+  b: {
+    c: {
+      age: 1
     }
-  })
-
-  return true
+  }
+}
+const obj = state.b.c
+const { b: { c: obj1 }} = state
+state.b = {
+  ...state.b,
+  c: {
+    age:2
+  }
 }
 
-const test = (err, params) => {
-  return params
-}
+const fake = {}
 
-
-
-console.log(getItemsValues())
+const { c: baba = {} } = fake
+console.log(baba)
+console.log(obj)
+console.log(obj1)
+console.log(state.b.c)
