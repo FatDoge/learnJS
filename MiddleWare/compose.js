@@ -14,7 +14,16 @@ function compose(...funcs) {
     return funcs[0]
   }
 
-  return funcs.reduce((a, b) => (...args) => a(b(...args)))
+  return funcs.reduce((a, b) => 
+    (...args) => {
+      return a(b(...args))
+    }
+  )
 }
 
-console.log(compose(...steps)(1))
+console.log('结果:', compose(...steps)(1))
+
+/*
+ * args: 1 3 6 10
+ *
+ */
