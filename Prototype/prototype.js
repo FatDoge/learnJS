@@ -17,14 +17,14 @@
 // console.log(a.__proto__ === A.prototype); //true
 // console.log(Function.__proto__===Function.prototype)
 
-// /*3、Object.create()方式*/
-// var a1 = {
-//     a: 1
-// }
-// var a2 = Object.create(a1);
-// console.log(a2.__proto__); //Object {a: 1}
+/*3、Object.create()方式*/
+var a1 = {
+    a: 1
+}
+var a2 = Object.create(a1);
+console.log(a2.__proto__); //Object {a: 1}
 
-// console.log(a2.__proto__ === a2.constructor.prototype); //false（此处即为图1中的例外情况）
+console.log(a2.__proto__ === a2.constructor.prototype); //false（此处即为图1中的例外情况）
 
 
 // function Person() {}
